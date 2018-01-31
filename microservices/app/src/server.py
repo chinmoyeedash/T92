@@ -5,141 +5,35 @@ from flask import render_template, jsonify
 import requests
 import json
 
-@app.route('/get_country')
-def get_country_try():
+@app.route('/signup')
+def signup_try():
+ 
+# This is the url to which the query is made
+    url1 = "https://auth.course77.hasura-app.io/v1/signup"
+
+# This is the json payload for the query
+    requestPayload = {
+        "provider": "username",
+        "data": {
+            "username": "nalini",
+            "password": "na@lini"
+        }   
+    }
+
+# Setting headers
     headers = {
         "Content-Type": "application/json",
-        "Authorization": "Bearer d7311342c7ecbfaf056c4965205b134a3a5f59814378fa22"
+        "Authorization": "Bearer 9b216217fd5be3310585e364902f7ad120f5ad7b0137c825"
     }
 
-    query = {
-        "type": "run_sql",
-        "args": {
-            "sql": "CREATE VIEW view_country_count AS SELECT country,COUNT(respondent) AS country_count FROM surveyresults GROUP BY country;"
-         }
-    }
-    dataUrl1= "https://data.course77.hasura-app.io/v1/query"
-    print(dataUrl1)
-    print(json.dumps(query))
-    response = requests.post(
-        dataUrl1, data=json.dumps(query), headers=headers
-    )
-    data1 = response.json()
+# Make the query and store response in resp
+    resp = requests.request("POST", url, data=json.dumps(requestPayload), headers=headers)
+    data1 = resp.json()
+# resp.content contains the json response.
     print(json.dumps(data1))
-
-    headers2 = {
-        "Content-Type": "application/json",
-        "Authorization": "Bearer d7311342c7ecbfaf056c4965205b134a3a5f59814378fa22"
-    }
-
-    query2 = {
-        "type": "add_existing_table_or_view",
-        "args": {
-            "name": "view_country_count"
-        }
-    }
-    dataUrl1= "https://data.course77.hasura-app.io/v1/query"
-    print(dataUrl1)
-    print(json.dumps(query2))
-    response = requests.post(
-        dataUrl1, data=json.dumps(query2), headers=headers2
-    )
-    data2 = response.json()
-    print(json.dumps(data2))
-
-    headers3 = {
-        "Content-Type": "application/json",
-        "Authorization": "Bearer d7311342c7ecbfaf056c4965205b134a3a5f59814378fa22"
-    }
-
-    query3 = {
-        "type": "select",
-        "args": {
-            "table": "view_country_count",
-            "columns":[
-               "*"
-            ],
-            "order_by":"country"
-        }
-    }
-    dataUrl1= "https://data.course77.hasura-app.io/v1/query"
-    print(dataUrl1)
-    print(json.dumps(query3))
-    response = requests.post(
-        dataUrl1, data=json.dumps(query3), headers=headers3
-    )
-    data3 = response.json()
-    print(json.dumps(data3))
-    return jsonify(data=data3)
-
-@app.route('/get_professional')
-def get_professional_try():
-    headers = {
-        "Content-Type": "application/json",
-        "Authorization": "Bearer d7311342c7ecbfaf056c4965205b134a3a5f59814378fa22"
-    }
-
-    query = {
-        "type": "run_sql",
-        "args": {
-            "sql": "CREATE VIEW view_professional_count AS SELECT professional,COUNT(respondent) AS professional_count FROM surveyresults GROUP BY professional;"
-         }
-    }
-    dataUrl1= "https://data.course77.hasura-app.io/v1/query"
-    print(dataUrl1)
-    print(json.dumps(query))
-    response = requests.post(
-        dataUrl1, data=json.dumps(query), headers=headers
-    )
-    data1 = response.json()
-    print(json.dumps(data1))
-
-    headers2 = {
-        "Content-Type": "application/json",
-        "Authorization": "Bearer d7311342c7ecbfaf056c4965205b134a3a5f59814378fa22"
-    }
-
-    query2 = {
-        "type": "add_existing_table_or_view",
-        "args": {
-            "name": "view_professional_count"
-        }
-    }
-    dataUrl1= "https://data.course77.hasura-app.io/v1/query"
-    print(dataUrl1)
-    print(json.dumps(query2))
-    response = requests.post(
-        dataUrl1, data=json.dumps(query2), headers=headers2
-    )
-    data2 = response.json()
-    print(json.dumps(data2))
-
-    headers3 = {
-        "Content-Type": "application/json",
-        "Authorization": "Bearer d7311342c7ecbfaf056c4965205b134a3a5f59814378fa22"
-    }
-
-    query3 = {
-        "type": "select",
-        "args": {
-            "table": "view_professional_count",
-            "columns":[
-               "*"
-            ],
-            "order_by":"professional"
-        }
-    }
-    dataUrl1= "https://data.course77.hasura-app.io/v1/query"
-    print(dataUrl1)
-    print(json.dumps(query3))
-    response = requests.post(
-        dataUrl1, data=json.dumps(query3), headers=headers3
-    )
-    data3 = response.json()
-    print(json.dumps(data3))
-    return jsonify(data=data3)
+    return jsonify(data=data1)
 
 @app.route("/")
 def home():
-    return "Hasura Hello World nalini Suresh"
+    return "Hasura Hello World nalini Suresh T92"
 
