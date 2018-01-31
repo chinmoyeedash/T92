@@ -16,7 +16,7 @@ def signup_try():
         "provider": "username",
         "data": {
             "username": "nalini",
-            "password": "na@lini"
+            "password": "na@Suresh"
         }   
     }
 
