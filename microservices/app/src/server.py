@@ -33,6 +33,36 @@ def signup_try():
     print(json.dumps(data1))
     return jsonify(data=data1)
 
+
+@app.route('/login')
+def login_try():
+ 
+
+# This is the url to which the query is made
+    url2 = "https://auth.course77.hasura-app.io/v1/login"
+
+# This is the json payload for the query
+    requestPayload2 = {
+        "provider": "username",
+        "data": {
+            "username": "nalini",
+            "password": "na@Suresh"
+        }
+    }
+
+# Setting headers
+    headers2 = {
+        "Content-Type": "application/json",
+        "Authorization": "Bearer 9b216217fd5be3310585e364902f7ad120f5ad7b0137c825"
+    }
+
+# Make the query and store response in resp
+    resp2 = requests.request("POST", url2, data=json.dumps(requestPayload2), headers=headers2)
+    data2 = resp2.json()
+# resp.content contains the json response.
+    
+    return jsonify(data=data2)
+    
 @app.route("/")
 def home():
     return "Hasura Hello World nalini Suresh T92"
