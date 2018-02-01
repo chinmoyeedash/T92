@@ -5,6 +5,32 @@ from flask import render_template, jsonify
 import requests
 import json
 
+@app.route('/sendotp')
+def sendotp_try():
+
+# This is the url to which the query is made
+    url = "https://auth.course77.hasura-app.io/v1/providers/mobile/send-otp"
+
+# This is the json payload for the query
+    requestPayload = {
+        "mobile": "8095610638",
+        "country_code": "91"
+    }
+
+# Setting headers
+    headers = {
+        "Content-Type": "application/json",
+        "Authorization": "Bearer 9b216217fd5be3310585e364902f7ad120f5ad7b0137c825"
+    }
+
+
+# Make the query and store response in resp
+    resp = requests.request("POST", url, data=json.dumps(requestPayload), headers=headers)
+    data1=resp.json()
+# resp.content contains the json response.
+    print(json.dumps(data1))
+    return jsonify(data=data1)
+
 @app.route('/signup')
 def signup_try():
  
