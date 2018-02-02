@@ -43,7 +43,7 @@ def signupotp_try():
         "data": {
             "mobile": "8095610638",
             "country_code": "91",
-            "otp": "57732077"
+            "otp": "94852833"
         }
     }
 
