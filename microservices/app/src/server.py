@@ -41,7 +41,7 @@ def signupotp_try():
     requestPayload = {
         "provider": "mobile",
         "data": {
-            "mobile": "8095610638",
+            "mobile": "8095610688",
             "country_code": "91",
             "otp": "948589"
         }
@@ -100,7 +100,7 @@ def login_try():
     requestPayload2 = {
         "provider": "username",
         "data": {
-            "username": "nalini",
+            "username": "nal",
             "password": "na@Suresh"
         }
     }
