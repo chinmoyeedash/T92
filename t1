@@ -1,4 +1,4 @@
-[2018-02-03 05:07:36 +0000] [1] [DEBUG] Current configuration:
+[2018-02-03 05:28:02 +0000] [1] [DEBUG] Current configuration:
   config: ./conf/gunicorn_config.py
   bind: ['0.0.0.0:8080']
   backlog: 2048
@@ -50,21 +50,21 @@
   default_proc_name: src:app
   pythonpath: None
   paste: None
-  on_starting: <function OnStarting.on_starting at 0x7f6bcabc1d08>
-  on_reload: <function OnReload.on_reload at 0x7f6bcabc1ea0>
-  when_ready: <function WhenReady.when_ready at 0x7f6bcabca0d0>
-  pre_fork: <function Prefork.pre_fork at 0x7f6bcabca268>
-  post_fork: <function Postfork.post_fork at 0x7f6bcabca400>
-  post_worker_init: <function PostWorkerInit.post_worker_init at 0x7f6bcabca598>
-  worker_int: <function WorkerInt.worker_int at 0x7f6bcabca730>
-  worker_abort: <function WorkerAbort.worker_abort at 0x7f6bcabca8c8>
-  pre_exec: <function PreExec.pre_exec at 0x7f6bcabcaa60>
-  pre_request: <function PreRequest.pre_request at 0x7f6bcabcabf8>
-  post_request: <function PostRequest.post_request at 0x7f6bcabcad08>
-  child_exit: <function ChildExit.child_exit at 0x7f6bcabcaea0>
-  worker_exit: <function WorkerExit.worker_exit at 0x7f6bca9330d0>
-  nworkers_changed: <function NumWorkersChanged.nworkers_changed at 0x7f6bca933268>
-  on_exit: <function OnExit.on_exit at 0x7f6bca933400>
+  on_starting: <function OnStarting.on_starting at 0x7f29e9815d08>
+  on_reload: <function OnReload.on_reload at 0x7f29e9815ea0>
+  when_ready: <function WhenReady.when_ready at 0x7f29e981e0d0>
+  pre_fork: <function Prefork.pre_fork at 0x7f29e981e268>
+  post_fork: <function Postfork.post_fork at 0x7f29e981e400>
+  post_worker_init: <function PostWorkerInit.post_worker_init at 0x7f29e981e598>
+  worker_int: <function WorkerInt.worker_int at 0x7f29e981e730>
+  worker_abort: <function WorkerAbort.worker_abort at 0x7f29e981e8c8>
+  pre_exec: <function PreExec.pre_exec at 0x7f29e981ea60>
+  pre_request: <function PreRequest.pre_request at 0x7f29e981ebf8>
+  post_request: <function PostRequest.post_request at 0x7f29e981ed08>
+  child_exit: <function ChildExit.child_exit at 0x7f29e981eea0>
+  worker_exit: <function WorkerExit.worker_exit at 0x7f29e95870d0>
+  nworkers_changed: <function NumWorkersChanged.nworkers_changed at 0x7f29e9587268>
+  on_exit: <function OnExit.on_exit at 0x7f29e9587400>
   proxy_protocol: False
   proxy_allow_ips: ['127.0.0.1']
   keyfile: None
@@ -76,59 +76,41 @@
   do_handshake_on_connect: False
   ciphers: TLSv1
   raw_paste_global_conf: []
-[2018-02-03 05:07:36 +0000] [1] [INFO] Starting gunicorn 19.7.1
-[2018-02-03 05:07:36 +0000] [1] [DEBUG] Arbiter booted
-[2018-02-03 05:07:36 +0000] [1] [INFO] Listening at: http://0.0.0.0:8080 (1)
-[2018-02-03 05:07:36 +0000] [1] [INFO] Using worker: sync
-[2018-02-03 05:07:36 +0000] [9] [INFO] Booting worker with pid: 9
-[2018-02-03 05:07:36 +0000] [1] [DEBUG] 1 workers
-[2018-02-03 05:07:41 +0000] [9] [ERROR] invalid syntax (server.py, line 129)
+[2018-02-03 05:28:02 +0000] [1] [INFO] Starting gunicorn 19.7.1
+[2018-02-03 05:28:02 +0000] [1] [DEBUG] Arbiter booted
+[2018-02-03 05:28:02 +0000] [1] [INFO] Listening at: http://0.0.0.0:8080 (1)
+[2018-02-03 05:28:02 +0000] [1] [INFO] Using worker: sync
+[2018-02-03 05:28:02 +0000] [9] [INFO] Booting worker with pid: 9
+[2018-02-03 05:28:03 +0000] [1] [DEBUG] 1 workers
+[2018-02-03 05:28:39 +0000] [9] [DEBUG] GET /signupotp
+[2018-02-03 05:28:40,201] ERROR in app: Exception on /signupotp [GET]
 Traceback (most recent call last):
-  File "/usr/local/lib/python3.6/site-packages/gunicorn/workers/base.py", line 135, in load_wsgi
-    self.wsgi = self.app.wsgi()
-  File "/usr/local/lib/python3.6/site-packages/gunicorn/app/base.py", line 67, in wsgi
-    self.callable = self.load()
-  File "/usr/local/lib/python3.6/site-packages/gunicorn/app/wsgiapp.py", line 65, in load
-    return self.load_wsgiapp()
-  File "/usr/local/lib/python3.6/site-packages/gunicorn/app/wsgiapp.py", line 52, in load_wsgiapp
-    return util.import_app(self.app_uri)
-  File "/usr/local/lib/python3.6/site-packages/gunicorn/util.py", line 352, in import_app
-    __import__(module)
-  File "/app/src/__init__.py", line 10, in <module>
-    from .server import *
-  File "/app/src/server.py", line 129
-    var fetchAction =  require('fetch');
-                  ^
-SyntaxError: invalid syntax
-[2018-02-03 05:07:41 +0000] [9] [ERROR] Exception in worker process
-Traceback (most recent call last):
-  File "/usr/local/lib/python3.6/site-packages/gunicorn/workers/base.py", line 135, in load_wsgi
-    self.wsgi = self.app.wsgi()
-  File "/usr/local/lib/python3.6/site-packages/gunicorn/app/base.py", line 67, in wsgi
-    self.callable = self.load()
-  File "/usr/local/lib/python3.6/site-packages/gunicorn/app/wsgiapp.py", line 65, in load
-    return self.load_wsgiapp()
-  File "/usr/local/lib/python3.6/site-packages/gunicorn/app/wsgiapp.py", line 52, in load_wsgiapp
-    return util.import_app(self.app_uri)
-  File "/usr/local/lib/python3.6/site-packages/gunicorn/util.py", line 352, in import_app
-    __import__(module)
-  File "/app/src/__init__.py", line 10, in <module>
-    from .server import *
-  File "/app/src/server.py", line 129
-    var fetchAction =  require('fetch');
-                  ^
-SyntaxError: invalid syntax
-
-During handling of the above exception, another exception occurred:
-
-Traceback (most recent call last):
-  File "/usr/local/lib/python3.6/site-packages/gunicorn/arbiter.py", line 578, in spawn_worker
-    worker.init_process()
-  File "/usr/local/lib/python3.6/site-packages/gunicorn/workers/base.py", line 126, in init_process
-    self.load_wsgi()
-  File "/usr/local/lib/python3.6/site-packages/gunicorn/workers/base.py", line 148, in load_wsgi
-    self.reloader.add_extra_file(exc_val.filename)
-AttributeError: 'NoneType' object has no attribute 'add_extra_file'
-[2018-02-03 05:07:41 +0000] [9] [INFO] Worker exiting (pid: 9)
-[2018-02-03 05:07:43 +0000] [1] [INFO] Shutting down: Master
-[2018-02-03 05:07:43 +0000] [1] [INFO] Reason: Worker failed to boot.
+  File "/usr/local/lib/python3.6/site-packages/flask/app.py", line 1982, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python3.6/site-packages/flask/app.py", line 1614, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python3.6/site-packages/flask/app.py", line 1517, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/lib/python3.6/site-packages/flask/_compat.py", line 33, in reraise
+    raise value
+  File "/usr/local/lib/python3.6/site-packages/flask/app.py", line 1612, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python3.6/site-packages/flask/app.py", line 1598, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/app/src/server.py", line 63, in signupotp_try
+    data3=resp3.json()
+  File "/usr/local/lib/python3.6/site-packages/requests/models.py", line 892, in json
+    return complexjson.loads(self.text, **kwargs)
+  File "/usr/local/lib/python3.6/json/__init__.py", line 354, in loads
+    return _default_decoder.decode(s)
+  File "/usr/local/lib/python3.6/json/decoder.py", line 339, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+  File "/usr/local/lib/python3.6/json/decoder.py", line 357, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+request payload
+{"provider": "mobile", "data": {"mobile": "8095610688", "country_code": "91", "otp": "74253650"}}
+STATUS CODE
+404
+Not Found
+100.117.92.181 - - [03/Feb/2018:05:28:40 +0000] "GET /signupotp HTTP/1.0" 500 291 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36"

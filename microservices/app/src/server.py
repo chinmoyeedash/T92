@@ -5,6 +5,11 @@ from flask import render_template, jsonify
 import requests
 import json
 
+@app.route('/tryparams/<user1>')
+def printparams():
+    print(user1)
+    return user1
+    
 @app.route('/sendotp')
 def sendotp_try():
 
@@ -56,7 +61,7 @@ def signupotp_try():
 # Make the query and store response in resp
     print("request payload")
     print(json.dumps(requestPayload3))
-    resp3 = requests.request("GET", url, data=json.dumps(requestPayload3), headers=headers3)
+    resp3 = requests.request("POST", url, data=json.dumps(requestPayload3), headers=headers3)
     print("STATUS CODE")
     print(resp3.status_code)
     print(resp3.reason)
