@@ -21,7 +21,8 @@ def printargs():
     print (args)
     no1 = args['key1']
     no2 = args['key2']
-    return jsonify(dict(data=[no1,no2]))
+    return no1
+#    return jsonify(dict(data=[no1,no2]))
 
 @app.route('/sendotp')
 def sendotp_try():
