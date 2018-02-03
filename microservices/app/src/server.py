@@ -58,7 +58,7 @@ def signupotp_try():
 
 # This is the json payload for the query
     requestPayload3 = {
-        "provider": "mobile",
+#        "provider": "mobile",
         "data": {
             "mobile": "8095610638",
             "country_code": "91",
