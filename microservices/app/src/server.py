@@ -122,7 +122,52 @@ def login_try():
 # resp.content contains the json response.
     
     return jsonify(data=data2)
+
+@app.route('/insertprofile')
+def insert_profile():
     
+    var fetchAction =  require('fetch');
+
+    var url = "https://data.course77.hasura-app.io/v1/query";
+
+// If you have the auth token saved in offline storage
+// var authToken = window.localStorage.getItem('HASURA_AUTH_TOKEN');
+// headers = { "Authorization" : "Bearer " + authToken }
+    var requestOptions = {
+        "method": "POST",
+        "headers": {
+            "Content-Type": "application/json",
+            "Authorization": "Bearer d6099009a09ad010066ef08066f51a1c8c616eeead94d8b8"
+    }
+    };
+
+    var body = {
+        "type": "insert",
+        "args": {
+            "table": "user",
+            "objects": [
+            {
+                    "deviceimei": "12345678910",
+                    "displayname": "nalini",
+                    "status": "whatsapp only",
+                    "mobilenumber": "8095610638"
+                }
+            ]
+        }
+    };
+
+    requestOptions.body = JSON.stringify(body);
+
+    fetchAction(url, requestOptions)
+    .then(function(response) {
+        return response.json();
+    })
+    .then(function(result) {
+        console.log(result);
+    })
+    .catch(function(error) {
+        console.log('Request Failed:' + error);
+    });
 @app.route("/")
 def home():
     return "Hasura Hello World nalini Suresh T92"

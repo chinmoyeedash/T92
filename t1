@@ -1,4 +1,4 @@
-[2018-02-03 04:10:12 +0000] [1] [DEBUG] Current configuration:
+[2018-02-03 04:45:37 +0000] [1] [DEBUG] Current configuration:
   config: ./conf/gunicorn_config.py
   bind: ['0.0.0.0:8080']
   backlog: 2048
@@ -50,21 +50,21 @@
   default_proc_name: src:app
   pythonpath: None
   paste: None
-  on_starting: <function OnStarting.on_starting at 0x7f38f2fe8d08>
-  on_reload: <function OnReload.on_reload at 0x7f38f2fe8ea0>
-  when_ready: <function WhenReady.when_ready at 0x7f38f2ff10d0>
-  pre_fork: <function Prefork.pre_fork at 0x7f38f2ff1268>
-  post_fork: <function Postfork.post_fork at 0x7f38f2ff1400>
-  post_worker_init: <function PostWorkerInit.post_worker_init at 0x7f38f2ff1598>
-  worker_int: <function WorkerInt.worker_int at 0x7f38f2ff1730>
-  worker_abort: <function WorkerAbort.worker_abort at 0x7f38f2ff18c8>
-  pre_exec: <function PreExec.pre_exec at 0x7f38f2ff1a60>
-  pre_request: <function PreRequest.pre_request at 0x7f38f2ff1bf8>
-  post_request: <function PostRequest.post_request at 0x7f38f2ff1d08>
-  child_exit: <function ChildExit.child_exit at 0x7f38f2ff1ea0>
-  worker_exit: <function WorkerExit.worker_exit at 0x7f38f2d5a0d0>
-  nworkers_changed: <function NumWorkersChanged.nworkers_changed at 0x7f38f2d5a268>
-  on_exit: <function OnExit.on_exit at 0x7f38f2d5a400>
+  on_starting: <function OnStarting.on_starting at 0x7f29d2876d08>
+  on_reload: <function OnReload.on_reload at 0x7f29d2876ea0>
+  when_ready: <function WhenReady.when_ready at 0x7f29d287f0d0>
+  pre_fork: <function Prefork.pre_fork at 0x7f29d287f268>
+  post_fork: <function Postfork.post_fork at 0x7f29d287f400>
+  post_worker_init: <function PostWorkerInit.post_worker_init at 0x7f29d287f598>
+  worker_int: <function WorkerInt.worker_int at 0x7f29d287f730>
+  worker_abort: <function WorkerAbort.worker_abort at 0x7f29d287f8c8>
+  pre_exec: <function PreExec.pre_exec at 0x7f29d287fa60>
+  pre_request: <function PreRequest.pre_request at 0x7f29d287fbf8>
+  post_request: <function PostRequest.post_request at 0x7f29d287fd08>
+  child_exit: <function ChildExit.child_exit at 0x7f29d287fea0>
+  worker_exit: <function WorkerExit.worker_exit at 0x7f29d25e80d0>
+  nworkers_changed: <function NumWorkersChanged.nworkers_changed at 0x7f29d25e8268>
+  on_exit: <function OnExit.on_exit at 0x7f29d25e8400>
   proxy_protocol: False
   proxy_allow_ips: ['127.0.0.1']
   keyfile: None
@@ -76,17 +76,17 @@
   do_handshake_on_connect: False
   ciphers: TLSv1
   raw_paste_global_conf: []
-[2018-02-03 04:10:12 +0000] [1] [INFO] Starting gunicorn 19.7.1
-[2018-02-03 04:10:12 +0000] [1] [DEBUG] Arbiter booted
-[2018-02-03 04:10:12 +0000] [1] [INFO] Listening at: http://0.0.0.0:8080 (1)
-[2018-02-03 04:10:12 +0000] [1] [INFO] Using worker: sync
-[2018-02-03 04:10:12 +0000] [1] [DEBUG] 1 workers
-[2018-02-03 04:10:12 +0000] [12] [INFO] Booting worker with pid: 12
-[2018-02-03 04:15:12 +0000] [12] [DEBUG] GET /signupotp
+[2018-02-03 04:45:37 +0000] [1] [INFO] Starting gunicorn 19.7.1
+[2018-02-03 04:45:37 +0000] [1] [DEBUG] Arbiter booted
+[2018-02-03 04:45:37 +0000] [1] [INFO] Listening at: http://0.0.0.0:8080 (1)
+[2018-02-03 04:45:37 +0000] [1] [INFO] Using worker: sync
+[2018-02-03 04:45:37 +0000] [10] [INFO] Booting worker with pid: 10
+[2018-02-03 04:45:37 +0000] [1] [DEBUG] 1 workers
+[2018-02-03 04:45:43 +0000] [10] [DEBUG] GET /signupotp
 request payload
-{"provider": "mobile", "data": {"mobile": "8095610688", "country_code": "91", "otp": "948589"}}
+{"provider": "mobile", "data": {"mobile": "8095610688", "country_code": "91", "otp": "74253650"}}
 STATUS CODE
 400
 Bad Request
 {"code": "not-enabled", "message": "This provider is disabled", "detail": null}
-100.117.92.181 - - [03/Feb/2018:04:15:13 +0000] "GET /signupotp HTTP/1.0" 200 112 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36"
+100.117.92.181 - - [03/Feb/2018:04:45:44 +0000] "GET /signupotp HTTP/1.0" 200 112 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36"
