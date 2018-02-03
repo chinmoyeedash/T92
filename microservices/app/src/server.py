@@ -6,8 +6,8 @@ import requests
 import json
 
 @app.route('/tryparams/<user1>')
-def printparams():
-#    print(json.dumps(user1))
+def printparams(user1):
+    print(user1)
     return user1
 
 @app.route('/sendotp')
