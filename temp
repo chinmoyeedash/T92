@@ -1,0 +1,122 @@
+[2018-02-03 10:36:15 +0000] [1] [DEBUG] Current configuration:
+  config: ./conf/gunicorn_config.py
+  bind: ['0.0.0.0:8080']
+  backlog: 2048
+  workers: 1
+  worker_class: sync
+  threads: 1
+  worker_connections: 1000
+  max_requests: 0
+  max_requests_jitter: 0
+  timeout: 30
+  graceful_timeout: 30
+  keepalive: 2
+  limit_request_line: 4094
+  limit_request_fields: 100
+  limit_request_field_size: 8190
+  reload: False
+  reload_engine: auto
+  spew: False
+  check_config: False
+  preload_app: False
+  sendfile: None
+  chdir: /app
+  daemon: False
+  raw_env: []
+  pidfile: None
+  worker_tmp_dir: None
+  user: 0
+  group: 0
+  umask: 0
+  initgroups: False
+  tmp_upload_dir: None
+  secure_scheme_headers: {'X-FORWARDED-PROTOCOL': 'ssl', 'X-FORWARDED-PROTO': 'https', 'X-FORWARDED-SSL': 'on'}
+  forwarded_allow_ips: ['127.0.0.1']
+  accesslog: -
+  access_log_format: %(h)s %(l)s %(u)s %(t)s "%(r)s" %(s)s %(b)s "%(f)s" "%(a)s"
+  errorlog: -
+  loglevel: debug
+  capture_output: True
+  logger_class: gunicorn.glogging.Logger
+  logconfig: None
+  syslog_addr: udp://localhost:514
+  syslog: False
+  syslog_prefix: None
+  syslog_facility: user
+  enable_stdio_inheritance: True
+  statsd_host: None
+  statsd_prefix: 
+  proc_name: None
+  default_proc_name: src:app
+  pythonpath: None
+  paste: None
+  on_starting: <function OnStarting.on_starting at 0x7fd578e1ed08>
+  on_reload: <function OnReload.on_reload at 0x7fd578e1eea0>
+  when_ready: <function WhenReady.when_ready at 0x7fd578e270d0>
+  pre_fork: <function Prefork.pre_fork at 0x7fd578e27268>
+  post_fork: <function Postfork.post_fork at 0x7fd578e27400>
+  post_worker_init: <function PostWorkerInit.post_worker_init at 0x7fd578e27598>
+  worker_int: <function WorkerInt.worker_int at 0x7fd578e27730>
+  worker_abort: <function WorkerAbort.worker_abort at 0x7fd578e278c8>
+  pre_exec: <function PreExec.pre_exec at 0x7fd578e27a60>
+  pre_request: <function PreRequest.pre_request at 0x7fd578e27bf8>
+  post_request: <function PostRequest.post_request at 0x7fd578e27d08>
+  child_exit: <function ChildExit.child_exit at 0x7fd578e27ea0>
+  worker_exit: <function WorkerExit.worker_exit at 0x7fd578b900d0>
+  nworkers_changed: <function NumWorkersChanged.nworkers_changed at 0x7fd578b90268>
+  on_exit: <function OnExit.on_exit at 0x7fd578b90400>
+  proxy_protocol: False
+  proxy_allow_ips: ['127.0.0.1']
+  keyfile: None
+  certfile: None
+  ssl_version: 2
+  cert_reqs: 0
+  ca_certs: None
+  suppress_ragged_eofs: True
+  do_handshake_on_connect: False
+  ciphers: TLSv1
+  raw_paste_global_conf: []
+[2018-02-03 10:36:15 +0000] [1] [INFO] Starting gunicorn 19.7.1
+[2018-02-03 10:36:15 +0000] [1] [DEBUG] Arbiter booted
+[2018-02-03 10:36:15 +0000] [1] [INFO] Listening at: http://0.0.0.0:8080 (1)
+[2018-02-03 10:36:15 +0000] [1] [INFO] Using worker: sync
+[2018-02-03 10:36:15 +0000] [9] [INFO] Booting worker with pid: 9
+[2018-02-03 10:36:15 +0000] [1] [DEBUG] 1 workers
+[2018-02-03 10:36:33 +0000] [9] [DEBUG] GET /tryparams/user1=abc
+[2018-02-03 10:36:33,341] ERROR in app: Exception on /tryparams/user1=abc [GET]
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.6/site-packages/flask/app.py", line 1982, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python3.6/site-packages/flask/app.py", line 1615, in full_dispatch_request
+    return self.finalize_request(rv)
+  File "/usr/local/lib/python3.6/site-packages/flask/app.py", line 1630, in finalize_request
+    response = self.make_response(rv)
+  File "/usr/local/lib/python3.6/site-packages/flask/app.py", line 1740, in make_response
+    rv = self.response_class.force_type(rv, request.environ)
+  File "/usr/local/lib/python3.6/site-packages/werkzeug/wrappers.py", line 921, in force_type
+    response = BaseResponse(*_run_wsgi_app(response, environ))
+  File "/usr/local/lib/python3.6/site-packages/werkzeug/wrappers.py", line 59, in _run_wsgi_app
+    return _run_wsgi_app(*args)
+  File "/usr/local/lib/python3.6/site-packages/werkzeug/test.py", line 923, in run_wsgi_app
+    app_rv = app(environ, start_response)
+TypeError: 'bool' object is not callable
+user1=abc
+100.117.92.181 - - [03/Feb/2018:10:36:33 +0000] "GET /tryparams/user1=abc HTTP/1.0" 500 291 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36"
+[2018-02-03 10:37:27 +0000] [9] [DEBUG] GET /tryparams/user1=nalini
+[2018-02-03 10:37:27,989] ERROR in app: Exception on /tryparams/user1=nalini [GET]
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.6/site-packages/flask/app.py", line 1982, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python3.6/site-packages/flask/app.py", line 1615, in full_dispatch_request
+    return self.finalize_request(rv)
+  File "/usr/local/lib/python3.6/site-packages/flask/app.py", line 1630, in finalize_request
+    response = self.make_response(rv)
+  File "/usr/local/lib/python3.6/site-packages/flask/app.py", line 1740, in make_response
+    rv = self.response_class.force_type(rv, request.environ)
+  File "/usr/local/lib/python3.6/site-packages/werkzeug/wrappers.py", line 921, in force_type
+    response = BaseResponse(*_run_wsgi_app(response, environ))
+  File "/usr/local/lib/python3.6/site-packages/werkzeug/test.py", line 923, in run_wsgi_app
+    app_rv = app(environ, start_response)
+TypeError: 'bool' object is not callable
+user1=nalini
+100.117.92.181 - - [03/Feb/2018:10:37:27 +0000] "GET /tryparams/user1=nalini HTTP/1.0" 500 291 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36"

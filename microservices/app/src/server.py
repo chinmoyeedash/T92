@@ -10,8 +10,9 @@ import json
 def printparams(user1):
     print(user1)
     if user1 == "nalini":
-        return True
-    return False
+        return "nalini"
+    return "not nalini"
+
 #to call /tryargs?key1=nal&key2=34
 @app.route('/tryargs')
 def printargs():
