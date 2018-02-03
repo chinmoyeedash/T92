@@ -5,11 +5,14 @@ from flask import render_template, jsonify
 import requests
 import json
 
+#to call /tryparams/user1=nalini
 @app.route('/tryparams/<user1>')
 def printparams(user1):
     print(user1)
-    return user1
-
+    if user1 == "nalini":
+        return True
+    return False
+#to call /tryargs?key1=nal&key2=34
 @app.route('/tryargs')
 def printargs():
     args = request.args;
