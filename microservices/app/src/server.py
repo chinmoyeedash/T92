@@ -57,6 +57,7 @@ def signupotp_try():
     resp = requests.request("POST", url, data=json.dumps(requestPayload), headers=headers)
     print("STATUS CODE")
     print(resp.status_code)
+    print(resp.reason)
     data1=resp.json()
 # resp.content contains the json response.
     print(json.dumps(data1))

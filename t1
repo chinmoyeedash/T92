@@ -1,4 +1,4 @@
-[2018-02-03 03:53:37 +0000] [1] [DEBUG] Current configuration:
+[2018-02-03 03:56:49 +0000] [1] [DEBUG] Current configuration:
   config: ./conf/gunicorn_config.py
   bind: ['0.0.0.0:8080']
   backlog: 2048
@@ -50,21 +50,21 @@
   default_proc_name: src:app
   pythonpath: None
   paste: None
-  on_starting: <function OnStarting.on_starting at 0x7f781b7f2d08>
-  on_reload: <function OnReload.on_reload at 0x7f781b7f2ea0>
-  when_ready: <function WhenReady.when_ready at 0x7f781b7fb0d0>
-  pre_fork: <function Prefork.pre_fork at 0x7f781b7fb268>
-  post_fork: <function Postfork.post_fork at 0x7f781b7fb400>
-  post_worker_init: <function PostWorkerInit.post_worker_init at 0x7f781b7fb598>
-  worker_int: <function WorkerInt.worker_int at 0x7f781b7fb730>
-  worker_abort: <function WorkerAbort.worker_abort at 0x7f781b7fb8c8>
-  pre_exec: <function PreExec.pre_exec at 0x7f781b7fba60>
-  pre_request: <function PreRequest.pre_request at 0x7f781b7fbbf8>
-  post_request: <function PostRequest.post_request at 0x7f781b7fbd08>
-  child_exit: <function ChildExit.child_exit at 0x7f781b7fbea0>
-  worker_exit: <function WorkerExit.worker_exit at 0x7f781b5640d0>
-  nworkers_changed: <function NumWorkersChanged.nworkers_changed at 0x7f781b564268>
-  on_exit: <function OnExit.on_exit at 0x7f781b564400>
+  on_starting: <function OnStarting.on_starting at 0x7f3063518d08>
+  on_reload: <function OnReload.on_reload at 0x7f3063518ea0>
+  when_ready: <function WhenReady.when_ready at 0x7f30635210d0>
+  pre_fork: <function Prefork.pre_fork at 0x7f3063521268>
+  post_fork: <function Postfork.post_fork at 0x7f3063521400>
+  post_worker_init: <function PostWorkerInit.post_worker_init at 0x7f3063521598>
+  worker_int: <function WorkerInt.worker_int at 0x7f3063521730>
+  worker_abort: <function WorkerAbort.worker_abort at 0x7f30635218c8>
+  pre_exec: <function PreExec.pre_exec at 0x7f3063521a60>
+  pre_request: <function PreRequest.pre_request at 0x7f3063521bf8>
+  post_request: <function PostRequest.post_request at 0x7f3063521d08>
+  child_exit: <function ChildExit.child_exit at 0x7f3063521ea0>
+  worker_exit: <function WorkerExit.worker_exit at 0x7f306328a0d0>
+  nworkers_changed: <function NumWorkersChanged.nworkers_changed at 0x7f306328a268>
+  on_exit: <function OnExit.on_exit at 0x7f306328a400>
   proxy_protocol: False
   proxy_allow_ips: ['127.0.0.1']
   keyfile: None
@@ -76,33 +76,14 @@
   do_handshake_on_connect: False
   ciphers: TLSv1
   raw_paste_global_conf: []
-[2018-02-03 03:53:37 +0000] [1] [INFO] Starting gunicorn 19.7.1
-[2018-02-03 03:53:37 +0000] [1] [DEBUG] Arbiter booted
-[2018-02-03 03:53:37 +0000] [1] [INFO] Listening at: http://0.0.0.0:8080 (1)
-[2018-02-03 03:53:37 +0000] [1] [INFO] Using worker: sync
-[2018-02-03 03:53:37 +0000] [9] [INFO] Booting worker with pid: 9
-[2018-02-03 03:53:37 +0000] [1] [DEBUG] 1 workers
-[2018-02-03 03:54:02 +0000] [9] [DEBUG] GET /
-100.117.92.181 - - [03/Feb/2018:03:54:02 +0000] "GET / HTTP/1.0" 200 36 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36"
-[2018-02-03 03:54:08 +0000] [9] [DEBUG] GET /signupotp
-[2018-02-03 03:54:09,072] ERROR in app: Exception on /signupotp [GET]
-Traceback (most recent call last):
-  File "/usr/local/lib/python3.6/site-packages/flask/app.py", line 1982, in wsgi_app
-    response = self.full_dispatch_request()
-  File "/usr/local/lib/python3.6/site-packages/flask/app.py", line 1614, in full_dispatch_request
-    rv = self.handle_user_exception(e)
-  File "/usr/local/lib/python3.6/site-packages/flask/app.py", line 1517, in handle_user_exception
-    reraise(exc_type, exc_value, tb)
-  File "/usr/local/lib/python3.6/site-packages/flask/_compat.py", line 33, in reraise
-    raise value
-  File "/usr/local/lib/python3.6/site-packages/flask/app.py", line 1612, in full_dispatch_request
-    rv = self.dispatch_request()
-  File "/usr/local/lib/python3.6/site-packages/flask/app.py", line 1598, in dispatch_request
-    return self.view_functions[rule.endpoint](**req.view_args)
-  File "/app/src/server.py", line 59, in signupotp_try
-    print(r.status_code)
-NameError: name 'r' is not defined
+[2018-02-03 03:56:49 +0000] [1] [INFO] Starting gunicorn 19.7.1
+[2018-02-03 03:56:49 +0000] [1] [DEBUG] Arbiter booted
+[2018-02-03 03:56:49 +0000] [1] [INFO] Listening at: http://0.0.0.0:8080 (1)
+[2018-02-03 03:56:49 +0000] [1] [INFO] Using worker: sync
+[2018-02-03 03:56:49 +0000] [1] [DEBUG] 1 workers
+[2018-02-03 03:56:49 +0000] [9] [INFO] Booting worker with pid: 9
+[2018-02-03 03:58:01 +0000] [9] [DEBUG] GET /signupotp
 STATUS CODE
-100.117.92.181 - - [03/Feb/2018:03:54:09 +0000] "GET /signupotp HTTP/1.0" 500 291 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36"
-[2018-02-03 03:54:10 +0000] [9] [DEBUG] GET /favicon.ico
-100.117.92.181 - - [03/Feb/2018:03:54:10 +0000] "GET /favicon.ico HTTP/1.0" 404 233 "https://app.course77.hasura-app.io/signupotp" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36"
+400
+{"code": "not-enabled", "message": "This provider is disabled", "detail": null}
+100.117.92.181 - - [03/Feb/2018:03:58:02 +0000] "GET /signupotp HTTP/1.0" 200 112 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36"
