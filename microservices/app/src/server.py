@@ -178,7 +178,7 @@ def insert_profile():
     return jsonify(data=data5)
 
 @app.route('/insertprofile2')
-def insert_profile():
+def insert_profile2():
 
 # This is the url to which the query is made
     url = "https://data.course77.hasura-app.io/v1/query"
