@@ -11,7 +11,8 @@ def printparams(user1):
     print(user1)
     if user1 == "nalini":
         return "nalini"
-    return "not nalini"
+    else :
+        return "not nalini"
 
 #to call /tryargs?key1=nal&key2=34
 @app.route('/tryargs')
