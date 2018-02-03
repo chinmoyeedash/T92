@@ -1,4 +1,4 @@
-[2018-02-03 09:03:47 +0000] [1] [DEBUG] Current configuration:
+[2018-02-03 09:08:27 +0000] [1] [DEBUG] Current configuration:
   config: ./conf/gunicorn_config.py
   bind: ['0.0.0.0:8080']
   backlog: 2048
@@ -50,21 +50,21 @@
   default_proc_name: src:app
   pythonpath: None
   paste: None
-  on_starting: <function OnStarting.on_starting at 0x7f401306cd08>
-  on_reload: <function OnReload.on_reload at 0x7f401306cea0>
-  when_ready: <function WhenReady.when_ready at 0x7f40130750d0>
-  pre_fork: <function Prefork.pre_fork at 0x7f4013075268>
-  post_fork: <function Postfork.post_fork at 0x7f4013075400>
-  post_worker_init: <function PostWorkerInit.post_worker_init at 0x7f4013075598>
-  worker_int: <function WorkerInt.worker_int at 0x7f4013075730>
-  worker_abort: <function WorkerAbort.worker_abort at 0x7f40130758c8>
-  pre_exec: <function PreExec.pre_exec at 0x7f4013075a60>
-  pre_request: <function PreRequest.pre_request at 0x7f4013075bf8>
-  post_request: <function PostRequest.post_request at 0x7f4013075d08>
-  child_exit: <function ChildExit.child_exit at 0x7f4013075ea0>
-  worker_exit: <function WorkerExit.worker_exit at 0x7f4012dde0d0>
-  nworkers_changed: <function NumWorkersChanged.nworkers_changed at 0x7f4012dde268>
-  on_exit: <function OnExit.on_exit at 0x7f4012dde400>
+  on_starting: <function OnStarting.on_starting at 0x7f59f8f0bd08>
+  on_reload: <function OnReload.on_reload at 0x7f59f8f0bea0>
+  when_ready: <function WhenReady.when_ready at 0x7f59f8f140d0>
+  pre_fork: <function Prefork.pre_fork at 0x7f59f8f14268>
+  post_fork: <function Postfork.post_fork at 0x7f59f8f14400>
+  post_worker_init: <function PostWorkerInit.post_worker_init at 0x7f59f8f14598>
+  worker_int: <function WorkerInt.worker_int at 0x7f59f8f14730>
+  worker_abort: <function WorkerAbort.worker_abort at 0x7f59f8f148c8>
+  pre_exec: <function PreExec.pre_exec at 0x7f59f8f14a60>
+  pre_request: <function PreRequest.pre_request at 0x7f59f8f14bf8>
+  post_request: <function PostRequest.post_request at 0x7f59f8f14d08>
+  child_exit: <function ChildExit.child_exit at 0x7f59f8f14ea0>
+  worker_exit: <function WorkerExit.worker_exit at 0x7f59f8c7d0d0>
+  nworkers_changed: <function NumWorkersChanged.nworkers_changed at 0x7f59f8c7d268>
+  on_exit: <function OnExit.on_exit at 0x7f59f8c7d400>
   proxy_protocol: False
   proxy_allow_ips: ['127.0.0.1']
   keyfile: None
@@ -76,45 +76,12 @@
   do_handshake_on_connect: False
   ciphers: TLSv1
   raw_paste_global_conf: []
-[2018-02-03 09:03:47 +0000] [1] [INFO] Starting gunicorn 19.7.1
-[2018-02-03 09:03:47 +0000] [1] [DEBUG] Arbiter booted
-[2018-02-03 09:03:47 +0000] [1] [INFO] Listening at: http://0.0.0.0:8080 (1)
-[2018-02-03 09:03:47 +0000] [1] [INFO] Using worker: sync
-[2018-02-03 09:03:47 +0000] [11] [INFO] Booting worker with pid: 11
-[2018-02-03 09:03:47 +0000] [1] [DEBUG] 1 workers
-[2018-02-03 09:04:25 +0000] [11] [DEBUG] GET /tryparams/user1=abc
-[2018-02-03 09:04:25,412] ERROR in app: Exception on /tryparams/user1=abc [GET]
-Traceback (most recent call last):
-  File "/usr/local/lib/python3.6/site-packages/flask/app.py", line 1982, in wsgi_app
-    response = self.full_dispatch_request()
-  File "/usr/local/lib/python3.6/site-packages/flask/app.py", line 1614, in full_dispatch_request
-    rv = self.handle_user_exception(e)
-  File "/usr/local/lib/python3.6/site-packages/flask/app.py", line 1517, in handle_user_exception
-    reraise(exc_type, exc_value, tb)
-  File "/usr/local/lib/python3.6/site-packages/flask/_compat.py", line 33, in reraise
-    raise value
-  File "/usr/local/lib/python3.6/site-packages/flask/app.py", line 1612, in full_dispatch_request
-    rv = self.dispatch_request()
-  File "/usr/local/lib/python3.6/site-packages/flask/app.py", line 1598, in dispatch_request
-    return self.view_functions[rule.endpoint](**req.view_args)
-TypeError: printparams() got an unexpected keyword argument 'user1'
-100.117.92.181 - - [03/Feb/2018:09:04:25 +0000] "GET /tryparams/user1=abc HTTP/1.0" 500 291 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36"
-100.117.92.181 - - [03/Feb/2018:09:04:32 +0000] "GET / HTTP/1.0" 200 36 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36"
-[2018-02-03 09:04:32 +0000] [11] [DEBUG] GET /
-[2018-02-03 09:04:44 +0000] [11] [DEBUG] GET /tryparams/user1=abc
-[2018-02-03 09:04:44,496] ERROR in app: Exception on /tryparams/user1=abc [GET]
-Traceback (most recent call last):
-  File "/usr/local/lib/python3.6/site-packages/flask/app.py", line 1982, in wsgi_app
-    response = self.full_dispatch_request()
-  File "/usr/local/lib/python3.6/site-packages/flask/app.py", line 1614, in full_dispatch_request
-    rv = self.handle_user_exception(e)
-  File "/usr/local/lib/python3.6/site-packages/flask/app.py", line 1517, in handle_user_exception
-    reraise(exc_type, exc_value, tb)
-  File "/usr/local/lib/python3.6/site-packages/flask/_compat.py", line 33, in reraise
-    raise value
-  File "/usr/local/lib/python3.6/site-packages/flask/app.py", line 1612, in full_dispatch_request
-    rv = self.dispatch_request()
-  File "/usr/local/lib/python3.6/site-packages/flask/app.py", line 1598, in dispatch_request
-    return self.view_functions[rule.endpoint](**req.view_args)
-TypeError: printparams() got an unexpected keyword argument 'user1'
-100.117.92.181 - - [03/Feb/2018:09:04:44 +0000] "GET /tryparams/user1=abc HTTP/1.0" 500 291 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36"
+[2018-02-03 09:08:27 +0000] [1] [INFO] Starting gunicorn 19.7.1
+[2018-02-03 09:08:27 +0000] [1] [DEBUG] Arbiter booted
+[2018-02-03 09:08:27 +0000] [1] [INFO] Listening at: http://0.0.0.0:8080 (1)
+[2018-02-03 09:08:27 +0000] [1] [INFO] Using worker: sync
+[2018-02-03 09:08:27 +0000] [11] [INFO] Booting worker with pid: 11
+[2018-02-03 09:08:27 +0000] [1] [DEBUG] 1 workers
+[2018-02-03 09:08:52 +0000] [11] [DEBUG] GET /tryparams/user1=abc
+user1=abc
+100.117.92.181 - - [03/Feb/2018:09:08:52 +0000] "GET /tryparams/user1=abc HTTP/1.0" 200 9 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36"

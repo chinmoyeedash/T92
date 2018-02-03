@@ -10,6 +10,14 @@ def printparams(user1):
     print(user1)
     return user1
 
+@app.route('tryargs')
+def printargs():
+    args = request.args;
+    print (args)
+    no1 = args['key1']
+    no2 = args['key2']
+    return jsonify(dict(data=[no1,no2]))
+
 @app.route('/sendotp')
 def sendotp_try():
 
