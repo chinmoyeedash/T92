@@ -7,9 +7,9 @@ import json
 
 @app.route('/tryparams/<user1>')
 def printparams():
-    print(user1)
+    print(json.dumps(user1))
     return user1
-    
+
 @app.route('/sendotp')
 def sendotp_try():
 
