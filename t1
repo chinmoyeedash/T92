@@ -1,4 +1,4 @@
-[2018-02-03 04:45:37 +0000] [1] [DEBUG] Current configuration:
+[2018-02-03 05:07:36 +0000] [1] [DEBUG] Current configuration:
   config: ./conf/gunicorn_config.py
   bind: ['0.0.0.0:8080']
   backlog: 2048
@@ -50,21 +50,21 @@
   default_proc_name: src:app
   pythonpath: None
   paste: None
-  on_starting: <function OnStarting.on_starting at 0x7f29d2876d08>
-  on_reload: <function OnReload.on_reload at 0x7f29d2876ea0>
-  when_ready: <function WhenReady.when_ready at 0x7f29d287f0d0>
-  pre_fork: <function Prefork.pre_fork at 0x7f29d287f268>
-  post_fork: <function Postfork.post_fork at 0x7f29d287f400>
-  post_worker_init: <function PostWorkerInit.post_worker_init at 0x7f29d287f598>
-  worker_int: <function WorkerInt.worker_int at 0x7f29d287f730>
-  worker_abort: <function WorkerAbort.worker_abort at 0x7f29d287f8c8>
-  pre_exec: <function PreExec.pre_exec at 0x7f29d287fa60>
-  pre_request: <function PreRequest.pre_request at 0x7f29d287fbf8>
-  post_request: <function PostRequest.post_request at 0x7f29d287fd08>
-  child_exit: <function ChildExit.child_exit at 0x7f29d287fea0>
-  worker_exit: <function WorkerExit.worker_exit at 0x7f29d25e80d0>
-  nworkers_changed: <function NumWorkersChanged.nworkers_changed at 0x7f29d25e8268>
-  on_exit: <function OnExit.on_exit at 0x7f29d25e8400>
+  on_starting: <function OnStarting.on_starting at 0x7f6bcabc1d08>
+  on_reload: <function OnReload.on_reload at 0x7f6bcabc1ea0>
+  when_ready: <function WhenReady.when_ready at 0x7f6bcabca0d0>
+  pre_fork: <function Prefork.pre_fork at 0x7f6bcabca268>
+  post_fork: <function Postfork.post_fork at 0x7f6bcabca400>
+  post_worker_init: <function PostWorkerInit.post_worker_init at 0x7f6bcabca598>
+  worker_int: <function WorkerInt.worker_int at 0x7f6bcabca730>
+  worker_abort: <function WorkerAbort.worker_abort at 0x7f6bcabca8c8>
+  pre_exec: <function PreExec.pre_exec at 0x7f6bcabcaa60>
+  pre_request: <function PreRequest.pre_request at 0x7f6bcabcabf8>
+  post_request: <function PostRequest.post_request at 0x7f6bcabcad08>
+  child_exit: <function ChildExit.child_exit at 0x7f6bcabcaea0>
+  worker_exit: <function WorkerExit.worker_exit at 0x7f6bca9330d0>
+  nworkers_changed: <function NumWorkersChanged.nworkers_changed at 0x7f6bca933268>
+  on_exit: <function OnExit.on_exit at 0x7f6bca933400>
   proxy_protocol: False
   proxy_allow_ips: ['127.0.0.1']
   keyfile: None
@@ -76,17 +76,59 @@
   do_handshake_on_connect: False
   ciphers: TLSv1
   raw_paste_global_conf: []
-[2018-02-03 04:45:37 +0000] [1] [INFO] Starting gunicorn 19.7.1
-[2018-02-03 04:45:37 +0000] [1] [DEBUG] Arbiter booted
-[2018-02-03 04:45:37 +0000] [1] [INFO] Listening at: http://0.0.0.0:8080 (1)
-[2018-02-03 04:45:37 +0000] [1] [INFO] Using worker: sync
-[2018-02-03 04:45:37 +0000] [10] [INFO] Booting worker with pid: 10
-[2018-02-03 04:45:37 +0000] [1] [DEBUG] 1 workers
-[2018-02-03 04:45:43 +0000] [10] [DEBUG] GET /signupotp
-request payload
-{"provider": "mobile", "data": {"mobile": "8095610688", "country_code": "91", "otp": "74253650"}}
-STATUS CODE
-400
-Bad Request
-{"code": "not-enabled", "message": "This provider is disabled", "detail": null}
-100.117.92.181 - - [03/Feb/2018:04:45:44 +0000] "GET /signupotp HTTP/1.0" 200 112 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36"
+[2018-02-03 05:07:36 +0000] [1] [INFO] Starting gunicorn 19.7.1
+[2018-02-03 05:07:36 +0000] [1] [DEBUG] Arbiter booted
+[2018-02-03 05:07:36 +0000] [1] [INFO] Listening at: http://0.0.0.0:8080 (1)
+[2018-02-03 05:07:36 +0000] [1] [INFO] Using worker: sync
+[2018-02-03 05:07:36 +0000] [9] [INFO] Booting worker with pid: 9
+[2018-02-03 05:07:36 +0000] [1] [DEBUG] 1 workers
+[2018-02-03 05:07:41 +0000] [9] [ERROR] invalid syntax (server.py, line 129)
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.6/site-packages/gunicorn/workers/base.py", line 135, in load_wsgi
+    self.wsgi = self.app.wsgi()
+  File "/usr/local/lib/python3.6/site-packages/gunicorn/app/base.py", line 67, in wsgi
+    self.callable = self.load()
+  File "/usr/local/lib/python3.6/site-packages/gunicorn/app/wsgiapp.py", line 65, in load
+    return self.load_wsgiapp()
+  File "/usr/local/lib/python3.6/site-packages/gunicorn/app/wsgiapp.py", line 52, in load_wsgiapp
+    return util.import_app(self.app_uri)
+  File "/usr/local/lib/python3.6/site-packages/gunicorn/util.py", line 352, in import_app
+    __import__(module)
+  File "/app/src/__init__.py", line 10, in <module>
+    from .server import *
+  File "/app/src/server.py", line 129
+    var fetchAction =  require('fetch');
+                  ^
+SyntaxError: invalid syntax
+[2018-02-03 05:07:41 +0000] [9] [ERROR] Exception in worker process
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.6/site-packages/gunicorn/workers/base.py", line 135, in load_wsgi
+    self.wsgi = self.app.wsgi()
+  File "/usr/local/lib/python3.6/site-packages/gunicorn/app/base.py", line 67, in wsgi
+    self.callable = self.load()
+  File "/usr/local/lib/python3.6/site-packages/gunicorn/app/wsgiapp.py", line 65, in load
+    return self.load_wsgiapp()
+  File "/usr/local/lib/python3.6/site-packages/gunicorn/app/wsgiapp.py", line 52, in load_wsgiapp
+    return util.import_app(self.app_uri)
+  File "/usr/local/lib/python3.6/site-packages/gunicorn/util.py", line 352, in import_app
+    __import__(module)
+  File "/app/src/__init__.py", line 10, in <module>
+    from .server import *
+  File "/app/src/server.py", line 129
+    var fetchAction =  require('fetch');
+                  ^
+SyntaxError: invalid syntax
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.6/site-packages/gunicorn/arbiter.py", line 578, in spawn_worker
+    worker.init_process()
+  File "/usr/local/lib/python3.6/site-packages/gunicorn/workers/base.py", line 126, in init_process
+    self.load_wsgi()
+  File "/usr/local/lib/python3.6/site-packages/gunicorn/workers/base.py", line 148, in load_wsgi
+    self.reloader.add_extra_file(exc_val.filename)
+AttributeError: 'NoneType' object has no attribute 'add_extra_file'
+[2018-02-03 05:07:41 +0000] [9] [INFO] Worker exiting (pid: 9)
+[2018-02-03 05:07:43 +0000] [1] [INFO] Shutting down: Master
+[2018-02-03 05:07:43 +0000] [1] [INFO] Reason: Worker failed to boot.

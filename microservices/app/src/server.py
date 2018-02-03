@@ -125,28 +125,17 @@ def login_try():
 
 @app.route('/insertprofile')
 def insert_profile():
-    
-    var fetchAction =  require('fetch');
 
-    var url = "https://data.course77.hasura-app.io/v1/query";
+# This is the url to which the query is made
+    url = "https://data.course77.hasura-app.io/v1/query"
 
-// If you have the auth token saved in offline storage
-// var authToken = window.localStorage.getItem('HASURA_AUTH_TOKEN');
-// headers = { "Authorization" : "Bearer " + authToken }
-    var requestOptions = {
-        "method": "POST",
-        "headers": {
-            "Content-Type": "application/json",
-            "Authorization": "Bearer d6099009a09ad010066ef08066f51a1c8c616eeead94d8b8"
-    }
-    };
-
-    var body = {
+# This is the json payload for the query
+    requestPayload = {
         "type": "insert",
         "args": {
             "table": "user",
             "objects": [
-            {
+                {
                     "deviceimei": "12345678910",
                     "displayname": "nalini",
                     "status": "whatsapp only",
@@ -154,20 +143,21 @@ def insert_profile():
                 }
             ]
         }
-    };
+    }
 
-    requestOptions.body = JSON.stringify(body);
+# Setting headers
+    headers = {
+        "Content-Type": "application/json",
+        "Authorization": "Bearer d6099009a09ad010066ef08066f51a1c8c616eeead94d8b8"
+    }
 
-    fetchAction(url, requestOptions)
-    .then(function(response) {
-        return response.json();
-    })
-    .then(function(result) {
-        console.log(result);
-    })
-    .catch(function(error) {
-        console.log('Request Failed:' + error);
-    });
+# Make the query and store response in resp
+    resp = requests.request("POST", url, data=json.dumps(requestPayload), headers=headers)
+    data5 = resp.json()
+# resp.content contains the json response.
+    print(resp.content)
+    return jsonify(data=data5)
+
 @app.route("/")
 def home():
     return "Hasura Hello World nalini Suresh T92"
