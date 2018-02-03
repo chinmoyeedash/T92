@@ -1,4 +1,4 @@
-[2018-02-03 03:56:49 +0000] [1] [DEBUG] Current configuration:
+[2018-02-03 04:02:50 +0000] [1] [DEBUG] Current configuration:
   config: ./conf/gunicorn_config.py
   bind: ['0.0.0.0:8080']
   backlog: 2048
@@ -50,21 +50,21 @@
   default_proc_name: src:app
   pythonpath: None
   paste: None
-  on_starting: <function OnStarting.on_starting at 0x7f3063518d08>
-  on_reload: <function OnReload.on_reload at 0x7f3063518ea0>
-  when_ready: <function WhenReady.when_ready at 0x7f30635210d0>
-  pre_fork: <function Prefork.pre_fork at 0x7f3063521268>
-  post_fork: <function Postfork.post_fork at 0x7f3063521400>
-  post_worker_init: <function PostWorkerInit.post_worker_init at 0x7f3063521598>
-  worker_int: <function WorkerInt.worker_int at 0x7f3063521730>
-  worker_abort: <function WorkerAbort.worker_abort at 0x7f30635218c8>
-  pre_exec: <function PreExec.pre_exec at 0x7f3063521a60>
-  pre_request: <function PreRequest.pre_request at 0x7f3063521bf8>
-  post_request: <function PostRequest.post_request at 0x7f3063521d08>
-  child_exit: <function ChildExit.child_exit at 0x7f3063521ea0>
-  worker_exit: <function WorkerExit.worker_exit at 0x7f306328a0d0>
-  nworkers_changed: <function NumWorkersChanged.nworkers_changed at 0x7f306328a268>
-  on_exit: <function OnExit.on_exit at 0x7f306328a400>
+  on_starting: <function OnStarting.on_starting at 0x7f4bdd573d08>
+  on_reload: <function OnReload.on_reload at 0x7f4bdd573ea0>
+  when_ready: <function WhenReady.when_ready at 0x7f4bdd57c0d0>
+  pre_fork: <function Prefork.pre_fork at 0x7f4bdd57c268>
+  post_fork: <function Postfork.post_fork at 0x7f4bdd57c400>
+  post_worker_init: <function PostWorkerInit.post_worker_init at 0x7f4bdd57c598>
+  worker_int: <function WorkerInt.worker_int at 0x7f4bdd57c730>
+  worker_abort: <function WorkerAbort.worker_abort at 0x7f4bdd57c8c8>
+  pre_exec: <function PreExec.pre_exec at 0x7f4bdd57ca60>
+  pre_request: <function PreRequest.pre_request at 0x7f4bdd57cbf8>
+  post_request: <function PostRequest.post_request at 0x7f4bdd57cd08>
+  child_exit: <function ChildExit.child_exit at 0x7f4bdd57cea0>
+  worker_exit: <function WorkerExit.worker_exit at 0x7f4bdd2e50d0>
+  nworkers_changed: <function NumWorkersChanged.nworkers_changed at 0x7f4bdd2e5268>
+  on_exit: <function OnExit.on_exit at 0x7f4bdd2e5400>
   proxy_protocol: False
   proxy_allow_ips: ['127.0.0.1']
   keyfile: None
@@ -76,14 +76,15 @@
   do_handshake_on_connect: False
   ciphers: TLSv1
   raw_paste_global_conf: []
-[2018-02-03 03:56:49 +0000] [1] [INFO] Starting gunicorn 19.7.1
-[2018-02-03 03:56:49 +0000] [1] [DEBUG] Arbiter booted
-[2018-02-03 03:56:49 +0000] [1] [INFO] Listening at: http://0.0.0.0:8080 (1)
-[2018-02-03 03:56:49 +0000] [1] [INFO] Using worker: sync
-[2018-02-03 03:56:49 +0000] [1] [DEBUG] 1 workers
-[2018-02-03 03:56:49 +0000] [9] [INFO] Booting worker with pid: 9
-[2018-02-03 03:58:01 +0000] [9] [DEBUG] GET /signupotp
+[2018-02-03 04:02:50 +0000] [1] [INFO] Starting gunicorn 19.7.1
+[2018-02-03 04:02:50 +0000] [1] [DEBUG] Arbiter booted
+[2018-02-03 04:02:50 +0000] [1] [INFO] Listening at: http://0.0.0.0:8080 (1)
+[2018-02-03 04:02:50 +0000] [1] [INFO] Using worker: sync
+[2018-02-03 04:02:50 +0000] [10] [INFO] Booting worker with pid: 10
+[2018-02-03 04:02:50 +0000] [1] [DEBUG] 1 workers
+[2018-02-03 04:03:31 +0000] [10] [DEBUG] GET /signupotp
 STATUS CODE
 400
+Bad Request
 {"code": "not-enabled", "message": "This provider is disabled", "detail": null}
-100.117.92.181 - - [03/Feb/2018:03:58:02 +0000] "GET /signupotp HTTP/1.0" 200 112 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36"
+100.117.92.181 - - [03/Feb/2018:04:03:32 +0000] "GET /signupotp HTTP/1.0" 200 112 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36"

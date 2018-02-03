@@ -38,7 +38,7 @@ def signupotp_try():
     url = "https://auth.course77.hasura-app.io/v1/signup"
 
 # This is the json payload for the query
-    requestPayload = {
+    requestPayload3 = {
         "provider": "mobile",
         "data": {
             "mobile": "8095610688",
@@ -48,20 +48,22 @@ def signupotp_try():
     }
 
 # Setting headers
-    headers = {
+    headers3 = {
         "Content-Type": "application/json",
         "Authorization": "Bearer 9b216217fd5be3310585e364902f7ad120f5ad7b0137c825"
     }
 
 # Make the query and store response in resp
-    resp = requests.request("POST", url, data=json.dumps(requestPayload), headers=headers)
+    print("request payload")
+    print(json.dumps(requestPayload3))
+    resp3 = requests.request("POST", url, data=json.dumps(requestPayload3), headers=headers3)
     print("STATUS CODE")
-    print(resp.status_code)
-    print(resp.reason)
-    data1=resp.json()
+    print(resp3.status_code)
+    print(resp3.reason)
+    data3=resp3.json()
 # resp.content contains the json response.
-    print(json.dumps(data1))
-    return jsonify(data=data1)
+    print(json.dumps(data3))
+    return jsonify(data=data3)
 
 @app.route('/signup')
 def signup_try():
