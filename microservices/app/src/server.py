@@ -10,7 +10,7 @@ def printparams(user1):
     print(user1)
     return user1
 
-@app.route('tryargs')
+@app.route('/tryargs')
 def printargs():
     args = request.args;
     print (args)
