@@ -56,7 +56,7 @@ def signupotp_try():
 # Make the query and store response in resp
     resp = requests.request("POST", url, data=json.dumps(requestPayload), headers=headers)
     print("STATUS CODE")
-    print(r.status_code)
+    print(resp.status_code)
     data1=resp.json()
 # resp.content contains the json response.
     print(json.dumps(data1))
