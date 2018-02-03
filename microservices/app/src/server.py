@@ -177,6 +177,40 @@ def insert_profile():
     print(resp.content)
     return jsonify(data=data5)
 
+@app.route('/insertprofile2')
+def insert_profile():
+
+# This is the url to which the query is made
+    url = "https://data.course77.hasura-app.io/v1/query"
+    args = request.args
+# This is the json payload for the query
+    requestPayload = {
+        "type": "insert",
+        "args": {
+            "table": "user",
+            "objects": [
+                {
+                    "deviceimei": args['deviceimei'],
+                    "displayname": args['displayname'],
+                    "status": args['status'],
+                    "mobilenumber": args['mobilenumber']
+                }
+            ]
+        }
+    }
+
+# Setting headers
+    headers = {
+        "Content-Type": "application/json",
+        "Authorization": "Bearer d6099009a09ad010066ef08066f51a1c8c616eeead94d8b8"
+    }
+
+# Make the query and store response in resp
+    resp = requests.request("POST", url, data=json.dumps(requestPayload), headers=headers)
+    data5 = resp.json()
+# resp.content contains the json response.
+    print(resp.content)
+    return jsonify(data=data5)
 @app.route("/")
 def home():
     return "Hasura Hello World nalini Suresh T92"
